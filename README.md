@@ -45,7 +45,9 @@ CyShield is an AI-powered cybersecurity system that detects and classifies cyber
 
 ---
 
-##  Project Structure
+## Project Structure
+
+```text
 Cyshield/
 │
 ├── cyshield-backend/
@@ -55,13 +57,15 @@ Cyshield/
 │
 ├── dashboard.html
 ├── style.css
+│
 ├── screenshots/
 │   ├── dashboard.png
 │   ├── prediction.png
-│   ├── shap.png
-│   └── demo.mp4
+│   └── shap.png
 │
+├── demo.mp4
 └── README.md
+
 
 ## Explainable AI (XAI)
 
