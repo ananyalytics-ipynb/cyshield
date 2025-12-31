@@ -16,7 +16,7 @@ CyShield is an AI-powered cybersecurity system that detects and classifies cyber
 
 ##  System Architecture
 
-![Architecture](Untitled Diagram.drawio.png)
+![Architecture](https://github.com/ananyalytics-ipynb/cyshield/blob/main/Untitled%20Diagram.drawio.png)
 
 ---
 
