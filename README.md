@@ -6,7 +6,7 @@ CyShield is an AI-powered cybersecurity system that detects and classifies cyber
 
 ## Research and Publications🏅
 Authored and presented my research paper at the **7th International Conference on Artificial Intelligence and Speech Technology, 2025**.
-Paper Title: **Enhancing Cyber Threat Detection using SHAP Explainable Model**.
+    Paper Title: **Enhancing Cyber Threat Detection using SHAP Explainable Model**.
 
 
 ##  Features
