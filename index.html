@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Cyshield- Cyber Threat Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About Cybersecurity</a></li>
+            <li><a href="#stats">Statistics</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#contact">Contact/Help</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="overlay">
+            <h1>Welcome to CYSHIELD!</h1>
+            <p>Integrating XAI into Cyber Threat Detection Systems</p>
+            <p>Making Systems Transparent and Trustworthy!</p>
+        </div>
+
+
+    </header>
+    <section id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/what.svg" alt="Cybersecurity illustration">
+            </div>
+            <div class="about-text">
+                <h2>What is Cybersecurity?</h2>
+                <p>Cybersecurity is the practice of protecting computer systems, networks, and digital data from
+                    unauthorized access, theft, damage, or disruption. With the rapid growth of technology, businesses
+                    and individuals are increasingly vulnerable to cyber threats such as malware, ransomware, phishing
+                    attacks, and hacking attempts.</p>
+            </div>
+        </div>
+    </section>
+    <section id="practices">
+        <div class="practices-container">
+            <div class="practices-text">
+                <h2>Best Practices for Cybersecurity</h2>
+                <ul>
+                    <li>Use strong, unique passwords and change them regularly.</li>
+                    <li>Enable two-factor authentication (2FA) for an added layer of security.</li>
+                    <li>Keep software and systems up to date with the latest security patches.</li>
+                    <li>Be cautious of suspicious emails, links, and attachments.</li>
+                    <li>Regularly back up important data to prevent loss from cyber attacks.</li>
+                </ul>
+            </div>
+            <div class="practices-image">
+                <img src="images/programming.svg" alt="Best practices illustration">
+            </div>
+        </div>
+
+
+    </section>
+    <section class="stats-section">
+        <h2>Cybersecurity Statistics</h2>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <h3 data-target="8500000" class="stat-number">0</h3>
+                <p>Cyber Attacks This Year</p>
+            </div>
+
+            <div class="stat-box">
+                <h3 data-target="12450" class="stat-number">0</h3>
+                <p>Data Breaches Today</p>
+            </div>
+
+            <div class="stat-box">
+                <h3 data-target="3200000" class="stat-number">0</h3>
+                <p>Phishing Emails Sent</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        const numbers = document.querySelectorAll('.stat-number');
+
+        const animate = () => {
+            numbers.forEach(num => {
+                let target = +num.getAttribute('data-target');
+                let count = 0;
+                let speed = target / 200; // smaller = slower animation
+
+                let update = () => {
+                    count += speed;
+                    if (count < target) {
+                        num.textContent = Math.floor(count);
+                        requestAnimationFrame(update);
+                    } else {
+                        num.textContent = target.toLocaleString();
+                    }
+                };
+
+                update();
+            });
+        };
+
+        // trigger animation when visible
+        let started = false;
+        window.addEventListener('scroll', () => {
+            let section = document.querySelector('.stats-section');
+            let sectionPos = section.getBoundingClientRect().top;
+
+            if (sectionPos < window.innerHeight && !started) {
+                animate();
+                started = true;
+            }
+        });
+    </script>
+    <section class="quiz-section">
+        <h2>Cybersecurity Quiz</h2>
+
+        <div class="quiz-box">
+            <h3 id="question">Question text here</h3>
+
+            <div class="options">
+                <button class="option-btn">Option 1</button>
+                <button class="option-btn">Option 2</button>
+                <button class="option-btn">Option 3</button>
+                <button class="option-btn">Option 4</button>
+            </div>
+
+            <p id="result"></p>
+        </div>
+    </section>
+    <script>
+        const quizData = [
+            {
+                question: "Which of the following is a type of cyber attack?",
+                options: ["SQL Injection", "JPEG Compression", "Video Encoding", "Image Filtering"],
+                answer: "SQL Injection"
+            },
+            {
+                question: "What does a firewall do?",
+                options: ["Encrypts data", "Blocks unauthorized access", "Improves WiFi speed", "Creates passwords"],
+                answer: "Blocks unauthorized access"
+            },
+            {
+                question: "Which one is a strong password?",
+                options: ["123456", "password123", "Sunshine2020", "A$9!fL2@kQ"],
+                answer: "A$9!fL2@kQ"
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        const questionEl = document.getElementById("question");
+        const optionButtons = document.querySelectorAll(".option-btn");
+        const resultEl = document.getElementById("result");
+
+        function loadQuestion() {
+            const q = quizData[currentQuestion];
+            questionEl.textContent = q.question;
+
+            optionButtons.forEach((btn, index) => {
+                btn.textContent = q.options[index];
+                btn.onclick = () => checkAnswer(btn.textContent);
+            });
+
+            resultEl.textContent = "";
+        }
+
+        function checkAnswer(selected) {
+            if (selected === quizData[currentQuestion].answer) {
+                resultEl.textContent = "Correct! 🎉";
+                resultEl.style.color = "lightgreen";
+            } else {
+                resultEl.textContent = "Wrong! ❌";
+                resultEl.style.color = "red";
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < quizData.length) {
+                    loadQuestion();
+                } else {
+                    questionEl.textContent = "Quiz Completed!";
+                    document.querySelector(".options").style.display = "none";
+                }
+            }, 1000);
+        }
+
+        loadQuestion();
+    </script>
+
+    <section class="cta-section">
+    <div class="cta-container">
+
+        <div class="cta-image">
+            <img src="images/stats.svg" alt="Cyber Scan">
+        </div>
+
+        <div class="cta-text">
+            <h2>Test How Safe Your File Is</h2>
+            <p>Analyze any file using our Explainable AI model. Detect threats instantly and understand why the model made its decision.</p>
+            <a href="dashboard.html" class="cta-btn">Go to Dashboard</a>
+        </div>
+
+    </div>
+</section>
+<footer class="main-footer">
+    <p>© 2025 CyShield. All rights reserved.</p>
+</footer>
+
+
+</body>
+
+</html>

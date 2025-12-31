@@ -1,0 +1,79 @@
+/* Dashboard Header */
+.dashboard-header {
+    background-image: url('../images/cyber-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.dashboard-header .overlay {
+    background: rgba(0,0,0,0.6);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.dashboard-header h1 {
+    font-size: 50px;
+    color: #b56bff;
+}
+
+.dashboard-header p {
+    font-size: 20px;
+    color: #d5baff;
+}
+
+/* Dashboard Section */
+.dashboard-section {
+    padding: 80px 40px;
+}
+
+/* Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Cards */
+.dash-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(187, 134, 252, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.dash-card:hover {
+    transform: translateY(-10px);
+}
+
+.dash-card h3 {
+    color: #bb86fc;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.dash-card p {
+    color: #ddd;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.dash-btn {
+    padding: 12px 25px;
+    background: #b56bff;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dash-btn:hover {
+    background: #dcb7ff;
+    box-shadow: 0 0 15px #b56bff;
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CyShield Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Statistics</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<header>
+    <div class="overlay">
+        <h1>Cyber Threat Detection using Explainable AI</h1>
+        <p>Explainable • Secure • Intelligent</p>
+    </div>
+</header>
+
+<!-- MAIN DASHBOARD -->
+<section class="dashboard-wrapper">
+
+    <!-- LEFT: GRAPH -->
+    <div class="graph-box">
+        <h3>Cyber Attack Trends</h3>
+        <p class="graph-subtitle">Year-wise global attack growth</p>
+        <canvas id="attackChart"></canvas>
+    </div>
+
+    <!-- RIGHT: INFO PANEL -->
+    <div class="right-panel">
+
+        <h3 class="panel-title">Project Details</h3>
+        <p class="panel-subtitle">SHAP Explainable Model</p>
+
+        <div class="panel-grid">
+
+            <div class="panel-card">
+                <h4>Research & Publications</h4>
+                <p>
+                    Authored and presented a research paper at the
+                    <strong>7th International Conference (AIST 2025)</strong>.
+                </p>
+                <p>
+                    <strong>Paper Title:</strong><br>
+                    Enhancing Cyber Threat Detection with SHAP Explainable Model
+                </p>
+            </div>
+
+            <div class="panel-card">
+                <h4>Machine Learning Algorithms</h4>
+                <ul>
+                    <li>Random Forest</li>
+                    <li>Gradient Boosting</li>
+                    <li>SHAP (Explainable AI)</li>
+                </ul>
+            </div>
+
+            <div class="panel-card">
+                <h4>Evaluation Metrics</h4>
+                <ul>
+                    <li><strong>Accuracy</strong></li>
+                    <li>Gradient Boosting: 0.9233</li>
+                    <li>Random Forest: 0.9236</li>
+                </ul>
+            </div>
+
+            <div class="panel-card">
+                <h4>Daily Scan Report</h4>
+                <p>Automated system monitoring</p>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!-- Proposed Architecture Section -->
+<section class="architecture-section">
+  <div class="arch-card">
+
+    <!-- LEFT: text / steps -->
+    <div class="arch-text">
+      <h3>Proposed System Architecture</h3>
+      <p class="arch-desc">Followed to build out a multiclass threat-detection model</p>
+
+      <ul class="arch-list">
+        <li>Data ingestion (static + dynamic features)</li>
+        <li>Preprocessing & feature engineering</li>
+        <li>Model training (Random Forest / Gradient Boosting)</li>
+        <li>Explainability: SHAP per-sample analysis</li>
+        <li>API / Scanner layer (FastAPI / Django)</li>
+        <li>Monitoring, logging & automated retraining</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: diagram image -->
+    <div class="arch-image">
+      <img src="images/Untitled Diagram.jpg" alt="Proposed system architecture diagram">
+    </div>
+
+  </div>
+</section>
+<!-- Results Carousel Section -->
+<section class="results-section">
+
+  <h3 class="results-title">Model Results & Visual Analysis</h3>
+  <p class="results-subtitle">Visual outputs generated from the threat detection pipeline</p>
+
+  <div class="results-carousel">
+
+    <div class="result-card">
+      <img src="images/rf.jpeg" alt="Confusion Matrix">
+      <p>Confusion Matrix</p>
+    </div>
+
+    <div class="result-card">
+      <img src="images/new gb.png" alt="Confusion Matrix">
+      <p>Confusion Matrix</p>
+    </div>
+
+    <div class="result-card">
+      <img src="images/featureimportance.png" alt="Feature Importance">
+      <p>Feature Importance</p>
+    </div>
+
+    <div class="result-card">
+      <img src="images/shapnew.png" alt="SHAP Explanation">
+      <p>SHAP Explainability</p>
+    </div>
+
+  </div>
+</section>
+<section class="predict-section">
+
+    <h2>Threat Detection</h2>
+    <p>Enter system details to analyze threat type</p>
+
+    <div class="predict-container">
+
+        <!-- INPUT FORM -->
+        <div class="predict-form">
+
+            <input type="number" id="file_size_kb" placeholder="File Size (KB)">
+            <input type="number" id="entropy" placeholder="Entropy">
+            <input type="number" id="num_imported_symbols" placeholder="Imported Symbols">
+            <input type="number" id="has_signature" placeholder="Has Signature (1/0)">
+            <input type="number" id="uses_network" placeholder="Uses Network (1/0)">
+            <input type="number" id="access_outside_hours" placeholder="Access Outside Hours (1/0)">
+            <input type="number" id="url_length" placeholder="URL Length">
+            <input type="number" id="domain_age_days" placeholder="Domain Age (days)">
+            <input type="number" id="num_suspicious_api_calls" placeholder="Suspicious API Calls">
+            <input type="number" id="login_failures" placeholder="Login Failures">
+
+            <!-- IMPORTANT: only this privilege input -->
+            <input type="number" id="user_privilege_level_low"
+                   placeholder="Low Privilege (1 = Yes, 0 = No)">
+
+            <button type="button" onclick="predictThreat()">
+                Analyze Threat
+            </button>
+        </div>
+
+        <!-- OUTPUT -->
+        <div class="predict-output">
+            <h3>Prediction Result</h3>
+            <p id="predictionText">Waiting for input...</p>
+            <pre id="shapResult"></pre>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <p>© 2025 CyShield. All rights reserved.</p>
+</footer>
+
+<!-- CHART SCRIPT -->
+<script>
+const ctx = document.getElementById('attackChart').getContext('2d');
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+        datasets: [{
+            label: 'Cyber Attacks (Millions)',
+            data: [4.2, 5.6, 7.1, 9.0, 11.3, 13.8, 16.4],
+            borderColor: '#bb86fc',
+            backgroundColor: 'rgba(187, 134, 252, 0.2)',
+            fill: true,
+            tension: 0.4,
+            pointRadius: 4
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                labels: { color: '#fff' }
+            }
+        },
+        scales: {
+            x: {
+                ticks: { color: '#ccc' },
+                grid: { color: 'rgba(255,255,255,0.1)' }
+            },
+            y: {
+                ticks: { color: '#ccc' },
+                grid: { color: 'rgba(255,255,255,0.1)' }
+            }
+        }
+    }
+});
+</script>
+<script>
+async function predictThreat() {
+
+    const predText = document.getElementById("predictionText");
+    const shapText = document.getElementById("shapResult");
+
+    predText.innerText = "Analyzing...";
+    shapText.textContent = "";
+
+    const payload = {
+        file_size_kb: Number(document.getElementById("file_size_kb").value || 0),
+        entropy: Number(document.getElementById("entropy").value || 0),
+        num_imported_symbols: Number(document.getElementById("num_imported_symbols").value || 0),
+        has_signature: Number(document.getElementById("has_signature").value || 0),
+        uses_network: Number(document.getElementById("uses_network").value || 0),
+        access_outside_hours: Number(document.getElementById("access_outside_hours").value || 0),
+        url_length: Number(document.getElementById("url_length").value || 0),
+        domain_age_days: Number(document.getElementById("domain_age_days").value || 0),
+        num_suspicious_api_calls: Number(document.getElementById("num_suspicious_api_calls").value || 0),
+        login_failures: Number(document.getElementById("login_failures").value || 0),
+        user_privilege_level_low: Number(document.getElementById("user_privilege_level_low").value || 0)
+    };
+
+    try {
+        const response = await fetch("http://127.0.0.1:8000/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        console.log("API Response:", result);
+
+        // ❌ Error case
+        if (result.error) {
+            predText.innerHTML = "❌ Prediction failed";
+            shapText.textContent = result.details || "Backend error";
+            return;
+        }
+
+        // ✅ Success case
+        const confidence = result.confidence !== undefined
+            ? (result.confidence * 100).toFixed(2)
+            : "N/A";
+
+        predText.innerHTML = `
+            <b>Threat Type:</b> ${result.prediction}<br>
+            <b>Confidence:</b> ${confidence}%
+        `;
+
+        if (Array.isArray(result.explanation)) {
+            let exp = "";
+            result.explanation.forEach(e => {
+                exp += `${e.feature}: ${e.importance ?? e.shap_value ?? 0}\n`;
+            });
+            shapText.textContent = exp;
+        } else {
+            shapText.textContent = JSON.stringify(result.explanation, null, 2);
+        }
+
+    } catch (err) {
+        console.error(err);
+        predText.innerText = "❌ Request failed";
+        shapText.textContent = err.toString();
+    }
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>

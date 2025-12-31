@@ -1,0 +1,631 @@
+body{
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0b0b0d;
+    color: #e0d4ff; /* soft neon purple text */
+    text-align: center;
+}
+header{
+    padding:80px 20px;
+    text-align: left;
+}
+header h1{
+    font-size: 55px;
+    color: #b56bff;
+    margin-bottom: 90px;
+    
+}
+header p {
+    font-size: 20px;
+    color: #d5baff;
+    
+}
+nav{
+    background-color: #0b0b0d;
+    
+    
+    background: rgba(255, 255, 255, 0.05); /* very transparent white */
+    backdrop-filter: blur(10px);           /* blurs whatever is behind it */
+    -webkit-backdrop-filter: blur(10px);   /* for Safari support */
+    border-radius: 15px;                   /* rounded corners */
+    padding: 20px 3px;
+    margin: 5px;                           /* some space around */
+
+
+
+}
+nav ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content: center;
+    gap: 99px;
+}
+
+nav ul li a {
+    text-decoration: none; /* remove underline */
+    color: #b56bff; /* neon purple */
+    font-size: 20px;
+    font-weight: bold;
+}
+header {
+    background-image: url('images/cyber-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+header .overlay {
+    background: rgba(0,0,0,0.5); /* semi-transparent black */
+    backdrop-filter: blur(5px);
+    padding: 80px 20px;
+}
+#about {
+    margin-top: 60px; /* adds space above the section */
+}
+
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;           /* full width of the page */
+    max-width: none;       /* remove any max-width that centers it */
+    padding: 20px;
+    box-sizing: border-box; /* include padding in width */
+}
+
+.about-image img {
+    width: 400px;
+    border-radius: 15px;
+}
+
+.about-text {
+    
+    flex: 1;             /* takes remaining space */
+    text-align: right;   /* text aligns to right edge of container */
+    margin: 0;           /* remove extra margin pushing it inward */
+    margin-right: 10px;
+    margin-left: 315px;
+}
+#about-text h2 {
+    font-size: 60px;
+    color: #b56bff;
+    margin-bottom: 20px;
+}
+#practices {
+    margin-top: 60px; /* adds space above the section */
+}
+
+
+.practices-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;           /* full width of the page */
+    max-width: none;       /* remove any max-width that centers it */
+    padding: 20px;
+    box-sizing: border-box; /* include padding in width */
+}
+
+.practices-image img {
+    width: 400px;
+    border-radius: 15px;
+}
+
+.practices-text {
+    
+    flex: 1;             /* takes remaining space */
+    text-align: left;   /* text aligns to right edge of container */
+    margin: 0;           /* remove extra margin pushing it inward */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+#practices-text h2 {
+    font-size: 56px;
+    color: #b56bff;
+    margin-bottom: 20px;
+}
+.stats-section {
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.stats-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #bb86fc; /* neon purple */
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.4);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d0a1ff;
+}
+.quiz-section {
+    margin-top: 80px;
+    text-align: center;
+    color: #fff;
+}
+
+.quiz-section h2 {
+    font-size: 2.5rem;
+    color: #bb86fc; /* neon purple */
+    margin-bottom: 30px;
+}
+
+.quiz-box {
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.4);
+}
+
+.option-btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #2c2c38;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option-btn:hover {
+    background: #bb86fc;
+    color: #000;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#quiz-section {
+    margin-bottom: 200px; /* adds space below the section */
+}
+/* Space above the section */
+.cta-section {
+    margin-top: 60px;
+}
+
+/* Flexbox layout like About */
+.cta-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Left image styling */
+.cta-image img {
+    width: 400px;
+    border-radius: 15px;
+    
+    margin-left: 40px;
+}
+
+/* Right text block */
+.cta-text {
+    flex: 1;
+    text-align: right; /* just like your About text */
+    margin-right: 30px;
+}
+
+/* Heading */
+.cta-text h2 {
+    font-size: 30px;
+    color: #b56bff;
+    margin-bottom: 15px;
+}
+
+/* Paragraph */
+.cta-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #d9c9ff;
+    margin-left: 600px;
+}
+
+/* Button */
+.cta-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #b56bff;
+    color: #000;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #dcb7ff;
+    box-shadow: 0 0 15px #b56bff;
+}
+
+.main-footer {
+    margin-top: 60px;   
+    padding: 20px;
+    text-align: center;
+    color: #d9c9ff;                /* soft purple */
+    background: rgba(255, 255, 255, 0.05); /* light glass glow */
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #b56bff40; /* subtle purple line */
+}
+/* ===============================
+   DASHBOARD LAYOUT (MAIN FIX)
+================================ */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 40px;
+    max-width: 1300px;
+    margin: auto;
+    align-items: flex-start;
+}
+
+/* ===============================
+   GRAPH BOX (LEFT)
+================================ */
+.graph-box {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(187, 134, 252, 0.3);
+}
+
+.graph-box h3 {
+    color: #bb86fc;
+    margin-bottom: 5px;
+}
+
+.graph-subtitle {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.graph-box canvas {
+    width: 100%;
+    max-height: 260px;
+}
+
+/* ===============================
+   RIGHT PANEL
+================================ */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===============================
+   PANEL CARDS
+================================ */
+.panel-title {
+    color: #bb86fc;
+    font-size: 22px;
+}
+
+.panel-subtitle {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.panel-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 18px;
+    color: #ddd;
+    transition: 0.3s ease;
+    list-style: none;
+}
+
+.panel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.4);
+}
+
+.panel-card h4 {
+    color: #bb86fc;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.panel-card p,
+.panel-card li {
+    font-size: 14px;
+    line-height: 1.6;
+    list-style: none;
+}
+
+.panel-card ul {
+    padding-left: 18px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.main-footer {
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+    color: #d9c9ff;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(181, 107, 255, 0.3);
+}
+
+/* ============================
+   PROPOSED ARCHITECTURE BLOCK
+   ============================ */
+.architecture-section {
+  max-width: 1200px;
+  margin: 36px auto;
+  padding: 0 20px;
+}
+
+.arch-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 30px rgba(11,11,13,0.6);
+  backdrop-filter: blur(10px);
+}
+
+/* Left text */
+.arch-text h3 {
+  color: #bb86fc;
+  margin: 0 0 6px 0;
+  font-size: 20px;
+}
+
+.arch-desc {
+  color: #bfb6e8;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+/* List */
+.arch-list {
+  list-style: none;      /* remove default bullets */
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.arch-list li {
+  position: relative;
+  padding-left: 18px;
+  color: #e6e1f8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* custom marker */
+.arch-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(180deg,#d7a9ff,#b56bff);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(181,107,255,0.25);
+}
+
+/* Right image */
+.arch-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arch-image img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid rgba(181,107,255,0.06);
+  box-shadow: 0 8px 30px rgba(181,107,255,0.08);
+}
+
+/* Hover lift for the whole card (subtle) */
+.arch-card:hover {
+  transform: translateY(-4px);
+  transition: transform 160ms ease;
+}
+
+/* RESPONSIVE: stack on small screens */
+@media (max-width: 880px) {
+  .arch-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .arch-image img {
+    max-height: 260px;
+  }
+}
+/* ============================
+   RESULTS CAROUSEL SECTION
+============================ */
+.results-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.results-title {
+  color: #bb86fc;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.results-subtitle {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+/* Horizontal scroll container */
+.results-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.results-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.results-carousel::-webkit-scrollbar-thumb {
+  background: rgba(187, 134, 252, 0.4);
+  border-radius: 4px;
+}
+
+.results-carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Individual cards */
+.result-card {
+  min-width: 260px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  scroll-snap-align: start;
+  box-shadow: 0 0 20px rgba(187, 134, 252, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Image inside card */
+.result-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Caption */
+.result-card p {
+  font-size: 14px;
+  color: #ddd;
+}
+.predict-section {
+    padding: 60px;
+    text-align: center;
+}
+
+.predict-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.predict-form {
+    width: 40%;
+    background: rgba(255,255,255,0.06);
+    padding: 25px;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.predict-form input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.predict-form button {
+    grid-column: span 2;
+    padding: 12px;
+    background: #b56bff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.predict-output {
+    width: 40%;
+    background: rgba(255,255,255,0.06);
+    padding: 25px;
+    border-radius: 16px;
+    text-align: left;
+}
+
+#predictionText {
+    font-size: 18px;
+    color: #bb86fc;
+    margin-top: 10px;
+}
+
+#shapResult {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Node / frontend
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large ML files (handled separately)
+*.joblib
+
+# VS Code
+.vscode/
+
+# Env files
+.env
+
