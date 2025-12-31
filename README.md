@@ -45,6 +45,21 @@ CyShield is an AI-powered cybersecurity system that detects and classifies cyber
 
 ---
 
+## Explainable AI (XAI)
+
+CyShield uses SHAP (SHapley Additive exPlanations) to:
+1. Explain why a prediction was made
+2. Show feature contribution
+3. Improve trust and transparency
+4. Help security analysts understand threats
+
+## Author
+
+Ananya Singh
+B.Tech – Artificial Intelligence & Machine Learning
+Cybersecurity | Explainable AI | Machine Learning
+
+
 ## Project Structure
 
 ```text
@@ -67,17 +82,5 @@ Cyshield/
 └── README.md
 
 
-## Explainable AI (XAI)
 
-CyShield uses SHAP (SHapley Additive exPlanations) to:
-1. Explain why a prediction was made
-2. Show feature contribution
-3. Improve trust and transparency
-4. Help security analysts understand threats
-
-## Author
-
-Ananya Singh
-B.Tech – Artificial Intelligence & Machine Learning
-Cybersecurity | Explainable AI | Machine Learning
 
